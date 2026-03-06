@@ -34,7 +34,7 @@ info.textContent = `${schedule.name} — ${employeeText} • ${serviceText}`
 
       const cancelIcon = document.createElement("img")
       cancelIcon.classList.add("cancel-icon")
-      cancelIcon.setAttribute("src", "./src/assets/cancel.svg")
+      cancelIcon.setAttribute("src", "/assets/cancel.svg")
       cancelIcon.setAttribute("alt", "Cancelar")
 
       cancelIcon.onclick = () => {
