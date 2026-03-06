@@ -5,7 +5,7 @@ Sistema web para agendamento de atendimentos em barbearia/salão, com controle d
 
 ![alt text](image.png)
 
-> ✅ Projeto finalizado e pronto para portfólio (deploy no Netlify/Vercel).
+> ✅ Projeto finalizado e pronto para portfólio (deploy no Netlify).
 
 ---
 
