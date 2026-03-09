@@ -10,7 +10,7 @@ export function hoursClick(){
         hour.classList.remove("hour-selected")
       })
 
-      selected.target.classList.add("hour-selected")
+      selected.currentTarget.classList.add("hour-selected")
 
     })
     

@@ -5,6 +5,8 @@ import { hoursClick } from "./hours-click.js"
 const hours = document.getElementById("hours")
 
 export function hoursLoad({ date, dailySchedules, employee }) {
+  const previouslySelectedHour = document.querySelector(".hour-selected")?.textContent?.trim()
+
   hours.innerHTML = ""
 
   // garante array
@@ -53,6 +55,10 @@ const unavailableHours = filteredByEmployee.map((schedule) =>
     li.classList.add(available ? "hour-available" : "hour-unavailable")
 
     li.textContent = hour
+
+    if (available && previouslySelectedHour === hour) {
+      li.classList.add("hour-selected")
+    }
 
     if (hour === "9:00") {
       hourHeaderAdd("Manhã")

@@ -38,31 +38,21 @@ info.textContent = `${schedule.name} — ${employeeText} • ${serviceText}`
       cancelIcon.setAttribute("alt", "Cancelar")
 
       cancelIcon.onclick = () => {
-const id = Number(item.getAttribute("data-id"))
+        const id = Number(item.getAttribute("data-id"))
 
-  openModal({
-    modalTitle: "Cancelar agendamento",
-    modalDescription: `${schedule.name} - ${dayjs(schedule.when).format("HH:mm")}`,
+        openModal({
+          modalTitle: "Cancelar agendamento",
+          modalDescription: `${schedule.name} - ${dayjs(schedule.when).format("HH:mm")}`,
+          onConfirm: async () => {
+            const deleted = await scheduleCancel(id)
 
-    onConfirm: async () => {
-
-      const deleted = await scheduleCancel(id)
-
-      if (deleted) {
-        item.remove() 
-        const deleted = await scheduleCancel(id)
-
-if (deleted) {
-  item.remove() // remove na hora
-
-  const employee = document.getElementById("employee")?.value
-  await schedulesDay({ employee }) 
-}
+            if (deleted) {
+              item.remove()
+              await schedulesDay()
+            }
+          }
+        })
       }
-
-    }
-  })
-}
 
 
       item.append(time, info, cancelIcon)

@@ -73,7 +73,6 @@ Serviço: ${serviceText}`,
         await schedulesDay({ employee })
 
         clientName.value = ""
-        hourSelected.classList.remove("hour-selected")
 
       } catch (error) {
         console.log(error)
